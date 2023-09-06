@@ -8,7 +8,7 @@ body {
 }
 
 div {
-	border: 1px solid red;
+	/* border: 1px solid red; */
 }
 
 .slideshow__container  {
@@ -28,6 +28,7 @@ div {
 	bottom: 20px;
 	display: flex;
 	gap: 5px;
+	opacity: 0.5;
 }
 
 .slideshow__dots--active {
