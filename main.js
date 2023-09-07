@@ -24,6 +24,16 @@ function showSlidesNext() {
 
 previousButton.addEventListener("click", showSlidesPrevious);
 
-function showSlidesPrevious() {
-	// some code here I have yet to figure out //
+// Some code here I have yet to figure out. 
+// Not working on first and last image 
+
+function showSlidesPrevious() { 
+  let i;
+  let slides = document.getElementsByClassName("slideshow__image");
+  for (i = slideIndex; i > 0; i--) {
+    slides[i].style.display = "none";
+  }
+  slideIndex--;
+  if (slideIndex < 1) {slideIndex = slides.length}
+  slides[slideIndex-1].style.display = "block";
 }
