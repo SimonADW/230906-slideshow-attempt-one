@@ -25,15 +25,21 @@ function showSlidesNext() {
 previousButton.addEventListener("click", showSlidesPrevious);
 
 // Some code here I have yet to figure out. 
-// Not working on first and last image 
+// Currently needs two clicks when the slideshow changes direction. 
 
 function showSlidesPrevious() { 
   let i;
   let slides = document.getElementsByClassName("slideshow__image");
-  for (i = slideIndex; i > 0; i--) {
+
+  if (slideIndex <= 0) {
+    slideIndex = slides.length -1;
+  } else {
+     slideIndex--;
+    }
+
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  slideIndex--;
-  if (slideIndex < 1) {slideIndex = slides.length}
-  slides[slideIndex-1].style.display = "block";
+  
+  slides[slideIndex].style.display = "block";
 }
